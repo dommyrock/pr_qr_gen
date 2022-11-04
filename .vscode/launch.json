@@ -1,0 +1,45 @@
+{
+   // Use IntelliSense to learn about possible attributes.
+   // Hover to view descriptions of existing attributes.
+   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+   "version": "0.2.0",
+   "configurations": [
+      {
+         "type": "lldb",
+         "request": "launch",
+         "name": "Debug executable 'pr_qr_gen'",
+         "cargo": {
+            "args": [
+               "build",
+               "--bin=pr_qr_gen",
+               "--package=pr_qr_gen"
+            ],
+            "filter": {
+               "name": "pr_qr_gen",
+               "kind": "bin"
+            }
+         },
+         "args": ["https://bitbucket.org/<ORG_NAME>/%7B0466f179-8878-4aaa-b2d2-515c99403953%7D/pull-requests/20973"],
+         "cwd": "${workspaceFolder}"
+      },
+      {
+         "type": "lldb",
+         "request": "launch",
+         "name": "Debug unit tests in executable 'pr_qr_gen'",
+         "cargo": {
+            "args": [
+               "test",
+               "--no-run",
+               "--bin=pr_qr_gen",
+               "--package=pr_qr_gen"
+            ],
+            "filter": {
+               "name": "pr_qr_gen",
+               "kind": "bin"
+            }
+         },
+         "args": [],
+         "cwd": "${workspaceFolder}"
+      }
+   ]
+}
